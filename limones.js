@@ -86,6 +86,7 @@ function detectarAtrapado(){
             intervalo=setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 6 ){
             velocidadCaida=100;
+            clearInterval(intervalo);
             intervalo=setInterval(bajarLimon,velocidadCaida);
             
         }else if(puntaje == 10){
@@ -114,4 +115,15 @@ function aparecerLimon(){
     limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY=0;
     actualizarPantalla();
+}
+
+
+function reiniciar(){
+    vidas= 3
+    puntaje= 0
+    velocidadCaida=200
+    clearInterval(intervalo);
+    mostrarEnSpan("txtPuntaje",puntaje);
+    mostrarEnSpan("txtVidas",vidas);
+    iniciar()
 }
