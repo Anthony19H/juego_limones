@@ -14,7 +14,7 @@ let limonY=0;
 
 let puntaje=0;
 let vidas=3;
-let velocidadCaida=100;
+let velocidadCaida=200;
 
 
 function iniciar(){
@@ -75,10 +75,21 @@ function detectarAtrapado(){
         limonX < personajeX + ANCHO_PERSONAJE && 
         limonY + ALTO_LIMON > personajeY && 
         limonY < personajeY + ALTURA_PERSONAJE){
-        //alert("Atrapado!!");
+        
         aparecerLimon();
         puntaje=puntaje+1;
         mostrarEnSpan("txtPuntaje",puntaje);
+        if(puntaje == 3){
+            velocidadCaida=150;
+        
+        }else if(puntaje == 6 ){
+            velocidadCaida=100;
+            
+        }else if(puntaje == 10){
+            alert("ganaste Te gusta los limones ehhhh");
+            
+        }
+        
     }
 
 }
@@ -90,7 +101,6 @@ function detectarPiso(){
         mostrarEnSpan("txtVidas",vidas);
         if(vidas == 0){
             alert("GAME OVER")
-
         }
     }
 }
