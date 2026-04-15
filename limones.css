@@ -121,3 +121,20 @@ footer h2 {
   margin-top: 40px;
   letter-spacing: 2px;
 }
+
+/* Posicionamiento del logo de Nintendo */
+header {
+  position: relative; /* Permite posicionar el logo respecto a la cabecera */
+}
+
+.logo-nintendo {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.logo-nintendo img {
+  width: 60px; /* Tamaño pequeño para que no estorbe */
+  height: auto;
+  opacity: 0.8; /* Un poco de transparencia para estilo retro */
+}
