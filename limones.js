@@ -36,14 +36,16 @@ function dibujarPersonaje(){
 }
 
 function moverIzquierda(){
+    if (personajeX>0){
     personajeX=personajeX-10;
     actualizarPantalla();
-    
+    }
 }
 
 function moverDerecha(){
+    if(personajeX<600-ANCHO_PERSONAJE){
     personajeX=personajeX+10;
-    actualizarPantalla();
+    actualizarPantalla();}
     
 }
 
@@ -70,6 +72,7 @@ function bajarLimon(){
     detectarAtrapado();
     detectarPiso();
 }
+
 
 function detectarAtrapado(){
     if(limonX + ANCHO_LIMON > personajeX && 
