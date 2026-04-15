@@ -1,31 +1,123 @@
+:root {
+  --color-fondo: #0f172a;
+  --color-consola: #1e293b;
+  --color-neon: #38bdf8;
+  --color-limon: #facc15;
+  --fuente-retro: 'Press Start 2P', cursive;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
+  font-family: var(--fuente-retro);
+  background-color: var(--color-fondo);
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(250, 204, 21, 0.05) 0%, transparent 40%);
   color: white;
   text-align: center;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.contenedor {
+.contenedor-principal {
   max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--color-limon);
+  text-shadow: 3px 3px 0px #854d0e;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 0.6rem;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* El Marco de la "Consola" */
+.consola-marco {
+  position: relative;
+  background-color: var(--color-consola);
+  padding: 15px;
+  border-radius: 12px;
+  border: 4px solid #334155;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.3);
+  display: inline-block;
 }
 
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
+  background-color: #000;
+  border: 4px solid #0f172a;
   display: block;
-  margin: 20px auto;
+  image-rendering: pixelated; /* Crucial para tu pixel art */
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
 }
 
-.panel {
-  margin: 20px 0;
+/* HUD (Puntaje y Vidas) */
+.hud-overlay {
+  display: flex;
+  justify-content: space-around;
+  background: #0f172a;
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 2px solid #334155;
+  margin-top: -4px;
 }
 
-.botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
+.dato-juego {
+  font-size: 0.7rem;
+  color: var(--color-neon);
+}
+
+/* Botones con estilo Arcade */
+.controles-seccion {
+  margin-top: 30px;
+}
+
+.btn-accion {
+  font-family: var(--fuente-retro);
+  background: #334155;
+  color: white;
+  border: none;
+  border-bottom: 4px solid #1e293b;
+  padding: 15px 20px;
+  font-size: 0.8rem;
   cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.1s;
+  border-radius: 4px;
+}
+
+.btn-accion:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+.btn-accion:hover {
+  background: #475569;
+  color: var(--color-neon);
+}
+
+.btn-reset {
+  background: #7f1d1d;
+  border-bottom-color: #450a0a;
+}
+
+.btn-reset:hover {
+  background: #991b1b;
+  color: white;
+}
+
+footer h2 {
+  font-size: 0.5rem;
+  color: #64748b;
+  margin-top: 40px;
+  letter-spacing: 2px;
 }

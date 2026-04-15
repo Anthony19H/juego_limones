@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Caza Estrellas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caza Estrellas - Edición Pixel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="limones.css">
   <script src="utils.js"></script>
- 
 </head>
 <body onload="iniciar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones Hagamos limonada!!! </p>
-    <h2>Autor: Anthony Herrera</h2>
-    <canvas id="areaJuego" width="600" height="400"> </canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
+  <div class="contenedor-principal">
+    <header>
+      <h1>Atrapar Limones</h1>
+      <p class="tagline">Si del cielo te caen limones... ¡Hagamos limonada!</p>
+    </header>
+
+    <div class="consola-marco">
+      <canvas id="areaJuego" width="600" height="400"></canvas>
+      
+      <div class="hud-overlay">
+        <div class="dato-juego">Puntaje: <span id="txtPuntaje">0</span></div>
+        <div class="dato-juego">Vidas: <span id="txtVidas">3</span></div>
+      </div>
     </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()">Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
+
+    <div class="controles-seccion">
+      <div class="botones">
+        <button class="btn-accion" onclick="moverIzquierda()">◄ IZQ</button>
+        <button class="btn-accion btn-reset" onclick="reiniciar()">REINICIAR</button>
+        <button class="btn-accion" onclick="moverDerecha()">DER ►</button>
+      </div>
     </div>
+
+    <footer>
+      <h2>Autor: Anthony Herrera</h2>
+    </footer>
   </div>
   <script src="limones.js"></script>
 </body>
