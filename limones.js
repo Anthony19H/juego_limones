@@ -125,6 +125,7 @@ function reiniciar(){
     vidas= 3
     puntaje= 0
     velocidadCaida=200
+    personajeX = canvas.width / 2 - (ANCHO_PERSONAJE / 2);
     clearInterval(intervalo);
     mostrarEnSpan("txtPuntaje",puntaje);
     mostrarEnSpan("txtVidas",vidas);
